@@ -1,11 +1,10 @@
 package types
 
 import (
-	"database/sql"
 	"sort"
 	"strings"
 
-	"github.com/getnf/embellish/internal/utils"
+	"github.com/getnf/winferior/internal/utils"
 )
 
 // Fonts
@@ -85,14 +84,5 @@ type Args struct {
 }
 
 func (Args) Version() string {
-	return "WiNFersio v0.1.0"
-}
-
-// params
-
-type GuiParams struct {
-	Data         NerdFonts
-	Database     *sql.DB
-	DownloadPath string
-	ExtractPath  string
+	return "WiNFerior v0.1.0"
 }

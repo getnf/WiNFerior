@@ -6,13 +6,13 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/getnf/embellish/internal/types"
-	"github.com/getnf/embellish/internal/utils"
+	"github.com/getnf/winferior/internal/utils"
+	"github.com/getnf/winferior/internal/types"
 	_ "modernc.org/sqlite"
 )
 
 func OpenDB(path string) *sql.DB {
-	db, err := sql.Open("sqlite", path+"/"+"embellish.sqlite3")
+	db, err := sql.Open("sqlite", path+"/"+"winferior.sqlite3")
 	if err != nil {
 		log.Fatal(err)
 	}

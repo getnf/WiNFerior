@@ -26,7 +26,7 @@ go.work
 
 # Built binary
 /bin
-embellish-tui
-embellish-gui
-embellish
+winferior-tui
+winferior-gui
+winferior
 main

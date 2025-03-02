@@ -1,6 +1,3 @@
-//go:build cli
-// +build cli
-
 package tui
 
 import (
@@ -9,13 +6,13 @@ import (
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/huh"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/getnf/embellish/internal/db"
-	"github.com/getnf/embellish/internal/handlers"
-	"github.com/getnf/embellish/internal/types"
-	"github.com/getnf/embellish/internal/utils"
+	"github.com/getnf/winferior/internal/db"
+	"github.com/getnf/winferior/internal/handlers"
+	"github.com/getnf/winferior/internal/types"
+	"github.com/getnf/winferior/internal/utils"
 )
 
-func ThemeGetnfInstall() *huh.Theme {
+func ThemeWinferiorInstall() *huh.Theme {
 	t := huh.ThemeBase()
 
 	t.Focused.Base = t.Focused.Base.BorderForeground(lipgloss.Color("7"))
@@ -28,8 +25,8 @@ func ThemeGetnfInstall() *huh.Theme {
 	return t
 }
 
-func ThemeGetnfUninstall() *huh.Theme {
-	t := ThemeGetnfInstall()
+func ThemeWinferiorUninstall() *huh.Theme {
+	t := ThemeWinferiorInstall()
 
 	t.Focused.MultiSelectSelector = t.Focused.MultiSelectSelector.Foreground(lipgloss.Color("1"))
 	t.Focused.SelectedOption = t.Focused.SelectedOption.Foreground(lipgloss.Color("1"))
@@ -76,7 +73,7 @@ func SelectFontsToInstall(data types.NerdFonts, database *sql.DB, downloadPath s
 			ms,
 		),
 	).WithTheme(
-		ThemeGetnfInstall(),
+		ThemeWinferiorInstall(),
 	).WithKeyMap(myKeyBinds("Install fonts"))
 
 	form.Run()
@@ -87,7 +84,7 @@ func SelectFontsToInstall(data types.NerdFonts, database *sql.DB, downloadPath s
 	}
 
 	for _, font := range selectedFonts {
-		err := handlers.PlatformInstallFont(font, downloadPath, extractPath, keepTar)
+		err := handlers.InstallFont(font, downloadPath, extractPath, keepTar)
 		if err != nil {
 			return err
 		}
@@ -117,13 +114,13 @@ func SelectFontsToUninstall(installedFonts []types.Font, database *sql.DB, extra
 			ms,
 		),
 	).WithTheme(
-		ThemeGetnfUninstall(),
+		ThemeWinferiorUninstall(),
 	).WithKeyMap(myKeyBinds("Uninstall fonts"))
 
 	form.Run()
 
 	for _, font := range selectedFonts {
-		err := handlers.PlatformUninstallFont(extractPath, font)
+		err := handlers.UninstallFont(extractPath, font)
 		if err != nil {
 			return err
 		}

@@ -1,4 +1,4 @@
-module github.com/getnf/embellish
+module github.com/getnf/winferior
 
 go 1.22.3
 
@@ -17,7 +17,6 @@ require (
 require github.com/adrg/xdg v0.5.0
 
 require (
-	github.com/KarpelesLab/weak v0.1.1 // indirect
 	github.com/alexflint/go-scalar v1.1.0 // indirect
 	github.com/atotto/clipboard v0.1.4 // indirect
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
@@ -28,8 +27,6 @@ require (
 	github.com/charmbracelet/x/input v0.1.1 // indirect
 	github.com/charmbracelet/x/term v0.1.1 // indirect
 	github.com/charmbracelet/x/windows v0.1.2 // indirect
-	github.com/diamondburned/gotk4-adwaita/pkg v0.0.0-20240712143708-824c3ce8a5f4
-	github.com/diamondburned/gotk4/pkg v0.3.1
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f // indirect
 	github.com/fatih/color v1.7.0 // indirect
@@ -47,7 +44,6 @@ require (
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
-	go4.org/unsafe/assume-no-moving-gc v0.0.0-20231121144256-b99613f794b6 // indirect
 	golang.org/x/sync v0.7.0 // indirect
 	golang.org/x/term v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
